@@ -1,5 +1,7 @@
 import { useState } from "react";
 import StockForm from "./components/StockForm";
+import { StockContextProvider } from './contexts/StockContext';
+import StockList from './components/StockList';
 
 function App() {
   const [stocks, setStocks] = useState([]);
@@ -9,6 +11,7 @@ function App() {
   };
 
   return (
+     <StockContextProvider>
     <div>
       <h1>Finance Dashboard</h1>
 
@@ -23,6 +26,7 @@ function App() {
         ))}
       </ul>
     </div>
+    </StockContextProvider>
   );
 }
 
