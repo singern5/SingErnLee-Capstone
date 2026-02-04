@@ -1,28 +1,17 @@
-import { useState } from "react";
 import StockForm from "./components/StockForm";
+import StockList from "./components/StockList";
+import { StockContextProvider } from "./contexts/StockContext";
 
 function App() {
-  const [stocks, setStocks] = useState([]);
-
-  const handleAddStock = (stock) => {
-    setStocks([...stocks, stock]);
-  };
-
   return (
-    <div>
-      <h1>Finance Dashboard</h1>
+    <StockContextProvider>
+      <div className="app">
+        <h1>Finance Dashboard</h1>
 
-      <StockForm onAddStock={handleAddStock} />
-
-      <h2>Stock List</h2>
-      <ul>
-        {stocks.map((stock, index) => (
-          <li key={index}>
-            {stock.symbol} — {stock.quantity} shares @ ${stock.price}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <StockForm />
+        <StockList />
+      </div>
+    </StockContextProvider>
   );
 }
 

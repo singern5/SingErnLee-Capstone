@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import { useState, useContext } from "react";
+import StockContext from "../contexts/StockContext";
 import "./StockForm.css";
 
-function StockForm({ onAddStock }) {
+function StockForm() {
+  const { addStock } = useContext(StockContext);
+
   const [symbol, setSymbol] = useState("");
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
@@ -9,23 +12,16 @@ function StockForm({ onAddStock }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newStock = {
+    addStock({
       symbol,
       quantity: Number(quantity),
-      price: Number(price),
-    };
+      price: Number(price)
+    });
 
-    if (onAddStock) {
-      onAddStock(newStock);
-    }
-
-    // clear form after submit
     setSymbol("");
     setQuantity("");
     setPrice("");
   };
-
-  
 
   return (
     <form className="stock-form" onSubmit={handleSubmit}>
@@ -40,14 +36,14 @@ function StockForm({ onAddStock }) {
           required
         />
         <input
-          type="text"
+          type="number"
           placeholder="Quantity"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           required
         />
         <input
-          type="text"
+          type="number"
           placeholder="Purchase Price"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
@@ -60,7 +56,5 @@ function StockForm({ onAddStock }) {
     </form>
   );
 }
-
-
 
 export default StockForm;
