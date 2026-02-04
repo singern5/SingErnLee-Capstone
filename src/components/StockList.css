@@ -15,7 +15,6 @@
   font-weight: 600;
   color: #f1f5f9;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #334155;
   padding-bottom: 0.5rem;
 }
 
@@ -81,7 +80,7 @@
 
 
 .stock-item:hover {
-  background-color: #020617;
+  background-color: #141c2e;
 }
 
 /* Stock text */
@@ -122,10 +121,11 @@
 
 /* Empty state */
 .empty-state {
-  text-align: center;
+  text-align: left;
   color: #94a3b8;
   font-size: 1rem;
-  padding: 2rem 0;
+  margin-top: -70px;
+  padding: 40px 0;
   text-align: left;
 }
 
