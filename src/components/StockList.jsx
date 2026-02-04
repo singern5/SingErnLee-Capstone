@@ -26,8 +26,8 @@ function StockList() {
               <li key={stock.symbol} className="stock-item">
                 <div className="stock-symbol">Symbol: {stock.symbol}</div>
                 <div className="quantity">Quantity: {stock.quantity}</div>
-                <div className="stock-buy-price">Purchase Price: ${stock.buyPrice}</div>
-                <div className="stock-price">Current: ${stock.currentPrice}</div>
+                <div className="stock-buy-price">Purchase Price: {stock.buyPrice}</div>
+                <div className="stock-price">Current Price: {stock.currentPrice}</div>
                 <div className="stock-profit">
                   Profit/Loss: <span className={profitClass}>
                     {profitLoss >= 0 ? "+" : ""}
