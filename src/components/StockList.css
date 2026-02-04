@@ -1,0 +1,138 @@
+/* Dark Theme Stock List CSS */
+
+.stock-list {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #1e293b;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stock-list h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 0.5rem;
+}
+
+/* Stock list items */
+.stock-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+/* Stock item container */
+.stock-item {
+  padding: 1rem;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background-color: #0f172a; /* 👈 slightly darker than container */
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
+
+
+/* Symbol line */
+.stock-symbol {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: 0.05em;
+}
+
+/* Quantity line */
+.quantity {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+/* Purchase price */
+.stock-buy-price,
+.stock-price {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* Profit/Loss container (label stays neutral) */
+.stock-profit {
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  color: #cbd5f5;
+}
+
+/* Only the number is colored */
+.stock-profit .positive {
+  color: #34d399;
+  font-weight: 600;
+}
+
+.stock-profit .negative {
+  color: #f87171;
+  font-weight: 600;
+}
+
+
+.stock-item:hover {
+  background-color: #020617;
+}
+
+/* Stock text */
+.stock-symbol {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #e2e8f0;
+}
+
+.stock-price,
+.stock-buy-price {
+  font-family: "Consolas", "Monaco", monospace;
+  color: #cbd5f5;
+}
+
+/* Profit / Loss styling */
+.stock-profit {
+  font-weight: 500;
+  color: #cbd5f5; /* neutral text */
+}
+
+.stock-profit .positive {
+  color: #34d399; /* green */
+  font-weight: 600;
+}
+
+.stock-profit .negative {
+  color: #f87171; /* red */
+  font-weight: 600;
+}
+
+.stock-error {
+  color: #a7ecff; /* red */
+  text-align: left;
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1rem;
+  padding: 2rem 0;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stock-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
