@@ -8,8 +8,8 @@ function App() {
       <div className="app">
         <h1>Finance Dashboard</h1>
 
-        <StockForm />
-        <StockList />
+        <StockForm title="Add a Stock" />
+        <StockList title="Stock List" />
       </div>
     </StockContextProvider>
   );
