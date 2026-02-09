@@ -1,128 +1,65 @@
-💹 Stock Tracker App
-📖 About This Project
+# Finance Dashboard
+A stock portfolio tracking application built with **React** and **Vite**.  
+This dashboard allows users to:
 
-This project is a Stock Tracker app built using React.
-It allows users to:
-- Search and add stocks to a personal stock list
-- View stock details including price, symbol, and market data
-- Update the stock list automatically using live data from an API
+- Add stock purchase details  
+- Fetch real-time stock prices via the **AlphaVantage API**  
+- Calculate profit and loss dynamically  
 
-This project helped me practice React components, hooks (useState, useEffect, useContext), API calls, and state management.
+---
 
-▶️ How to Run This Project Locally
-- Clone the repository
-- git clone https://github.com/your-username/your-repo-name.git
-- Go into the project folder
-- cd your-repo-name
+## Prerequisites
+Before running this project, ensure you have the following installed:
 
+- **Node.js** (version 18 or higher recommended)  
+- **npm** (Node Package Manager, comes with Node.js)  
 
-Install dependencies
-- npm install
-- Start the app
-- npm run dev
+---
 
-Open your browser and go to:
-http://localhost:5173
+## How to Run the Project Locally
+```bash
+1. Clone or Download the Repository
+If you already have the project files, navigate to the project folder in your terminal:
+cd your-project-folder-name
 
-🧩 What I Built
-1. Stock Search & Add
-- Input field for entering stock symbols
-- Automatically fetches stock data using an API
-- Adds stock to a list when the user clicks Add
-- Keeps track of added stocks in state
+2. Install Dependencies
+Install the required packages listed in package.json: npm install
 
-2. Stock List
-- Displays all added stocks in a list format
-- Shows live details like stock name, symbol, and price
-- Automatically updates the stock list when new stocks are added
-- Allows removal of stocks from the list
+3. Start the Development Server
+Run the following command:npm run dev
+Once the server starts, the terminal will display a local URL
+(usually http://localhost:5173/). Open this in your browser to view the app.
 
-3. API Usage
-Uses a Stock Market API (like Alpha Vantage, IEX Cloud, or any free API)
+Running Tests
+This project includes unit tests using Vitest and React Testing Library.
+npm run test
 
-Fetches:
-- Stock symbols
-- Stock prices
-- Other metadata (company name, exchange)
-- API calls are handled inside useEffect
-- Uses fetch() to get data asynchronously
+Technologies Used
+React – Frontend library for building the user interface
+Vite – Fast development and build tool
+CSS – Styling (dark theme implementation)
+AlphaVantage API – Fetching real-time global stock quotes
+Vitest – Unit testing framework
 
-🧠 State Management
+Features
+Add, view, and track stock purchases
+Real-time stock price updates via API
+Dynamic profit/loss calculations
 
-Before
-- Passed stock data between components using props
-- Could get messy with multiple levels of components
+## Bugs and Challenges Encountered & Resolutions
 
-After (Improvement)
-- Used React Context (useContext) to store shared stock data
-- Created a StockContext so multiple components can access the same list
+1. **CSS Styling and Syntax Issues**  
+- **Challenge:** Styles defined in CSS files were not applying to components (e.g., the dropdown and converter).  
+- **Resolution:** I realized I was using the HTML `id` attribute instead of React’s `className` in my JSX. I also made sure to explicitly import the CSS files at the top of the component files (e.g., `import "./StockForm.css"`). Additionally, I fixed general CSS syntax mistakes, like missing braces and semicolons.
 
-Made the code cleaner and easier to maintain
+2. **Component Composition and Imports**  
+- **Challenge:** Updates made to the main `App.jsx` file were not showing in the browser, especially when adding new features like `CurrencyDropdown`.  
+- **Resolution:** I discovered I had forgotten to import the component into the main file. I fixed this by adding the import statement and making sure the component tag was included inside the return statement of the `App` function.
 
-🎨 Styling
-Used separate CSS files for each component
+3. **Error Handling Logic**  
+- **Challenge:** Entering an invalid stock symbol would clear the entire stock list to show the error message, which was a poor user experience.  
+- **Resolution:** I updated the conditional rendering logic in `StockList.jsx`. Now, the error message displays **below** the existing stock list, so valid data stays visible while alerting the user.
 
-Fixed styling issues by:
-- Using className correctly in JSX
-- Matching CSS selectors to components
-- Improving layout with Flexbox for lists and forms
-
-🐞 Bugs & Challenges I Faced
-- CSS Not Applying
-
-Problem: Styles didn’t appear in the browser
-- Fix: Fixed syntax errors and used className instead of id
-- Stock List Not Updating
-
-Problem: List did not update when adding stocks
-Fix: Used state correctly and triggered re-render using setState
-
-Too Many Props
-
-Problem: Passing stock data through multiple components became messy
-
-Fix: Used useContext for shared stock data
-
-✨ Extra Improvements
-
-Live stock data from API instead of hardcoded values
-
-Automatic list updates when new stocks are added
-
-Cleaner structure using Context API
-
-Prepared app for future features like removing stocks or showing charts
-
-📝 GitHub & Version Control
-
-Project is pushed to GitHub
-
-Commits were made regularly
-
-Commit messages clearly explain:
-
-What was changed
-
-Why the change was made
-
-Example commit messages:
-
-Add stock search component with API fetch
-
-Implement stock list and dynamic updates
-
-Refactor state using React Context
-
-Fix CSS layout issues
-
-🌱 What I Learned
-
-How to use useState, useEffect, and useContext
-
-How to fetch and use API data in React
-
-How to structure React components properly
-
-How to debug React and CSS issues
-
-How to manage shared state using Context instead of passing props
+4. **React Terminology and Syntax Sensitivity**  
+- **Challenge:** Navigating new concepts like `useState`, `useEffect`, and understanding the difference between Components and Props was initially confusing. Build errors often came from small syntax mistakes, like missing commas or mismatched braces.  
+- **Resolution:** I took more time to learn the concepts introduced in all lessons **beyond just coding**, heavily using AI and other resources to understand how things work. While I could grasp the ideas better conceptually, writing the code from scratch with the correct syntax was still very challenging. I focused on step-by-step debugging and understanding how data flows from parent to child via props to make the app stable.
